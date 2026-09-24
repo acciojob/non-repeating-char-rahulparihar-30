@@ -1,13 +1,13 @@
 function firstNonRepeatedChar(str) {
  // Write your code here
-	let charCount = {}
+	let charMap = new Map()
 
 	for (const char of str) {
-		charCount[str] = (charCount[str] || 0) + 1;
+		charMap.set(char,charMap.get(char)||0 + 1)
 	}
 
 	for(const char of str){
-		if (charCount[char] === 1) {
+		if (charMap.get(char) === 1) {
 			return char;
 		}
 	}
